@@ -148,4 +148,4 @@ export default Calculator;
 
 ## RESULT
 The program for developing a simple calculator in React.js is executed successfully.
-](https://github.com/Akash692/Commercial_Website.git)
+
