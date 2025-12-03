@@ -1,5 +1,5 @@
-# Ex04 Simple Calculator - React Project
-## Date:
+## Ex04 Simple Calculator - React Project
+## Date: 29-09-2025
 
 ## AIM
 To  develop a Simple Calculator using React.js with clean and responsive design, ensuring a smooth user experience across different screen sizes.
@@ -46,10 +46,106 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+App.css
+~~~
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #9ebc8a;
+  font-family: Georgia;
+}
 
+.calc {
+  background: #73946b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
 
+#display {
+  width: 160px;
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+~~~
+App.jsx
+~~~
+import React, { useState } from "react";
+import "./App.css"; // You can put the styles in a CSS file or inline
+
+function Calculator() {
+  const [display, setDisplay] = useState("");
+
+  const press = (val) => {
+    setDisplay((prev) => prev + val);
+  };
+
+  const calc = () => {
+    try {
+      // Evaluate expression safely
+      // eslint-disable-next-line no-eval
+      setDisplay(eval(display).toString());
+    } catch (error) {
+      setDisplay("Error");
+    }
+  };
+
+  const clr = () => {
+    setDisplay("");
+  };
+
+  return (
+    <div className="calc">
+      <input id="display" value={display} readOnly />
+      <br />
+      <div>
+        <button onClick={() => press("1")}>1</button>
+        <button onClick={() => press("2")}>2</button>
+        <button onClick={() => press("3")}>3</button>
+        <button onClick={() => press("+")}>+</button>
+      </div>
+      <div>
+        <button onClick={() => press("4")}>4</button>
+        <button onClick={() => press("5")}>5</button>
+        <button onClick={() => press("6")}>6</button>
+        <button onClick={() => press("-")}>-</button>
+      </div>
+      <div>
+        <button onClick={() => press("7")}>7</button>
+        <button onClick={() => press("8")}>8</button>
+        <button onClick={() => press("9")}>9</button>
+        <button onClick={() => press("*")}>*</button>
+      </div>
+      <div>
+        <button onClick={clr}>C</button>
+        <button onClick={() => press("0")}>0</button>
+        <button onClick={calc}>=</button>
+        <button onClick={() => press("/")}>/</button>
+      </div>
+    </div>
+  );
+}
+
+export default Calculator;
+
+~~~
 ## OUTPUT
 
+<img width="1909" height="1134" alt="image" src="https://github.com/user-attachments/assets/ca7d05a7-3965-475a-ae13-f42bf5613766" />
 
 ## RESULT
 The program for developing a simple calculator in React.js is executed successfully.
+](https://github.com/Akash692/Commercial_Website.git)
